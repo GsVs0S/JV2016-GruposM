@@ -4,9 +4,9 @@
  * utilizando un ArrayList persistente en fichero.
  * Colabora en el patron Fachada.
  * @since: prototipo2.0
- * @source: PatronesDAO.java 
- * @version: 2.1 - 2017.04.09 
+ * @version: 2.1 - 2017.05.24 
  * @author: ajp
+ * @modificacion:JLC
  */
 
 package accesoDatos.fichero;
@@ -267,6 +267,16 @@ public class PatronesDAO implements OperacionesDAO, Persistente {
 	public void borrarTodo() {
 		datosPatrones = new ArrayList<Patron>();
 		cargarPredeterminados();
+	}
+	
+	/**
+	 * Se añade metodo por exigencias de la interfaz OperacionesDAO
+	 * y se deja vacio por que no es necesario su uso en esta clase.
+	 */
+	@Override
+	public String listarId() {
+		
+		return null;
 	}
 
 } //class

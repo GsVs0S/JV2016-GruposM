@@ -4,8 +4,9 @@
  * Colabora en el patron Fachada.
  * @since: prototipo2.0
  * @source: PatronesDAO.java 
- * @version: 2.1 - 2017/04/03
+  * @version: 2.1 - 2017.05.24 
  * @author: ajp
+ * @modificacion:JLC
  */
 
 package accesoDatos.memoria;
@@ -206,6 +207,16 @@ public class PatronesDAO implements OperacionesDAO {
 	public void borrarTodo() {
 		datosPatrones = new ArrayList<Patron>();
 		cargarPredeterminados();
+	}
+	
+	/**
+	 * Se añade metodo por exigencias de la interfaz OperacionesDAO
+	 * y se deja vacio por que no es necesario su uso en esta clase.
+	 */
+	@Override
+	public String listarId() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 } //class

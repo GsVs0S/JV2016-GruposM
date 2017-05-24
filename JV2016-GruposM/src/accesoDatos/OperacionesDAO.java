@@ -3,13 +3,14 @@
  * Interfaz con las operaciones básicas DAO, necesarias para la fachada.
  * @since: prototipo2.1
  * @source: OperacionesDAO.java  
- * @version: 2.1 - 2017.04.23 
+ * @version: 2.1 - 2017.05.24 
  * @author: ajp
+ * @modificacion:JLC
  */
 
 package accesoDatos;
 
-import java.util.List;
+import modelo.ModeloException;
 
 public interface OperacionesDAO {
 
@@ -27,13 +28,6 @@ public interface OperacionesDAO {
 	 * @return - el Object encontrado; null si no existe.
 	 */
 	Object obtener(Object obj);
-	
-	/**
-	 * Obtiene todos los objeto del mismo tipo.
-	 * @return - la List con los objetos encontrados.
-	 */
-	@SuppressWarnings("rawtypes")
-	List obtenerTodos();
 	
 	/**
 	 *  Alta de un objeto en el almacén de datos, 
@@ -55,8 +49,9 @@ public interface OperacionesDAO {
 	 *  Actualiza datos de un Objeto reemplazando el almacenado por el recibido.
 	 *	@param obj - Objeto nuevo.
 	 *  @throws DatosException - si no existe.
+	 * @throws ModeloException 
 	 */
-	void actualizar(Object obj) throws DatosException;
+	void actualizar(Object obj) throws DatosException, ModeloException;
 	
 	/**
 	 * Obtiene el listado de todos los datos almacenados.
@@ -65,7 +60,7 @@ public interface OperacionesDAO {
 	String listarDatos();
 	
 	/**
-	 * Obtiene el listado de todos los identificadores almacenados.
+	 * Obtiene el listado de todos los datos almacenados.
 	 * @return el texto con el volcado de datos.
 	 */
 	String listarId();
@@ -79,5 +74,6 @@ public interface OperacionesDAO {
 	 * Elimina todos los datos.
 	 */
 	void borrarTodo();
+
 	
 } // interface

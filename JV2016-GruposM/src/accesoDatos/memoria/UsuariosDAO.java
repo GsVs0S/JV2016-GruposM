@@ -5,8 +5,9 @@
  * Colabora en el patron Fachada.
  * @since: prototipo2.0
  * @source: UsuariosDAO.java 
- * @version: 2.1 - 2017/04/03 
+ * @version: 2.1 - 2017.05.24 
  * @author: ajp
+ * @modificacion:JLC
  */
 
 package accesoDatos.memoria;
@@ -269,6 +270,16 @@ public class UsuariosDAO  implements OperacionesDAO {
 		datosUsuarios = new ArrayList<Usuario>();
 		equivalenciasId = new Hashtable<String, String>();
 		cargarPredeterminados();
+	}
+
+	/**
+	 * Se añade metodo por exigencias de la interfaz OperacionesDAO
+	 * y se deja vacio por que no es necesario su uso en esta clase.
+	 */
+	@Override
+	public String listarId() {
+		
+		return null;
 	}
 	
 } //class
